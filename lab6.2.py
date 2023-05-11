@@ -1,20 +1,17 @@
-"""" Сгенерировать все возможные одномерные массивы из чисел 0, 1, 2 и 3, где сумма элементов массива должна быть кратна 3.
-Целевая функция будет максимизировать количество уникальных комбинаций элементов массива."""
+"""" Сгенерировать все возможные одномерные массивы из чисел 0, 1, 2 и 3, где сумма элементов массива должна быть равна 6.
+Целевая функция заключается в генерации всех уникальных комбинаций, где сумма элементов равна 6. """
 
-import itertools
+n = 4
+K = []
+for i in range(4):
+    for j in range(4):
+        for k in range(4):
+            for l in range(4):
+                if i != j and i != k and i != l and j != k and j != l and k != l: # ограничение на повторяющиеся элементы
+                    if i + j + k + l == 5: # ограничение на сумму элементов
+                        K.append([i, j, k, l])
 
-elements = [0, 1, 2, 3]
-k = 4        # длина массива
-count = 0    # количество уникальных комбинаций
-result = []  # список всех комбинаций
-
-for combination in itertools.product(elements, repeat=k):
-    if sum(combination) % 3 == 0:
-        if combination not in result:
-            result.append(combination)
-            count += 1
-
-print("Количество уникальных комбинаций:", count)
+print("Количество комбинаций:", len(K))
 print("Все комбинации:")
-for combination in result:
+for combination in K:
     print(combination)

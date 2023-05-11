@@ -1,8 +1,14 @@
 """"Вариант 12. Сгенерировать все возможные варианты одномерного массива (К) из чисел 0, 1, 2 и 3."""
 
-import itertools
+n = 4
+K = []
+for i in range(4):
+    for j in range(4):
+        for k in range(4):
+            for l in range(4):
+                    K.append([i, j, k, l])
 
-K = [0, 1, 2, 3]
-all_combinations = list(itertools.product(K, repeat=len(K)))
-
-print(all_combinations)
+print("Количество комбинаций:", len(K))
+print("Все комбинации:")
+for combination in K:
+    print(combination)
