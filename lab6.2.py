@@ -8,7 +8,7 @@ for i in range(4):
         for k in range(4):
             for l in range(4):
                 if i != j and i != k and i != l and j != k and j != l and k != l: # ограничение на повторяющиеся элементы
-                    if i + j + k + l == 5: # ограничение на сумму элементов
+                    if i + j + k + l == 6: # ограничение на сумму элементов
                         K.append([i, j, k, l])
 
 print("Количество комбинаций:", len(K))
