@@ -13,11 +13,12 @@ min_combination = None
 for combination in K:
     # Проверяем ограничения на четность и нечетность элементов
     if all(x % 2 == 1 for x in combination[::2]) and all(x % 2 == 0 for x in combination[1::2]):
-        # Вычисляем значение 
+        # Вычисляем значение целевой функции
         sum_mod = sum(abs(x) for x in combination) % 6
+        # Обновляем минимальное значение и комбинацию переменных
         if sum_mod < min_sum:
             min_sum = sum_mod
             min_combination = combination
 
-print("Минимальное значение целевой функции:", min_sum)
+print("Количество допустимых комбинаций:", sum_mod)
 print("Набор переменных, при котором достигается минимум:", min_combination)
