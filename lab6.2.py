@@ -24,7 +24,7 @@ for i in range(4**n):
         combo.append(digit)
     combinations.append(combo)
 
-# Проверка все комбинации суммы и выбрать, которые равны 5 по модулю
+# Проверка все комбинации суммы и выбрать, которые равны 6 по модулю
 valid_combinations = []
 for combo in combinations:
     if all((combo[i] % 2) != (i % 2) for i in range(n)):
